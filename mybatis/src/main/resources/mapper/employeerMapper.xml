@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.IemployeerDao">
+    <resultMap id="BaseResultMap" type="employeer">
+        <id column="employeer_id" jdbcType="INTEGER" property="employeerId"/>
+        <result column="employeer_name" jdbcType="VARCHAR" property="employeerName"/>
+        <result column="employeer_age" jdbcType="INTEGER" property="employeerAge"/>
+        <result column="employeer_department" jdbcType="VARCHAR" property="employeerDepartment"/>
+        <result column="employeer_worktype" jdbcType="VARCHAR" property="employeerWorktype"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    employeer_id, employeer_name, employeer_age, employeer_department, employeer_worktype
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_employeer
+        where employeer_id = #{employeerId,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_employeer
+    where employeer_id = #{employeerId,jdbcType=INTEGER}
+  </delete>
+</mapper>
