@@ -1,4 +1,4 @@
-package designpattern.Creational.singleton;
+package creational.singleton;
 
 /**
  * @author Kingsely
