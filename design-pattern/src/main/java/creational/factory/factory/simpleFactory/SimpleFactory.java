@@ -14,7 +14,7 @@ import creational.factory.service.impl.Yili;
 public class SimpleFactory {
 
     public Milk getMilk(String name) {
-        if ("特仑苏".equals(name)) {
+        if ("特仑苏1111".equals(name)) {
             return new Telunsu();
         } else if ("伊利".equals(name)) {
             return new Yili();
