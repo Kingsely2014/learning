@@ -1,0 +1,122 @@
+
+plugins {
+    id 'java'
+}
+
+group 'pres.kingsely.learn'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+println "----------Gradle 任务开始----------"
+
+task me{
+    doLast{
+        println"Hello,my name is Kingsely."
+    }
+}
+
+task helloworld << {
+    println helloworld.name
+    println project.name
+    println 'My First Gradle Project!'
+}
+//依赖方式一
+task intro(dependsOn: me)<<{
+    println"What's your name?"
+}
+
+task upper << {
+    String expString = 'My First Gradle Project!'
+    println "Original: " + expString
+    println "Upper case: " + expString.toUpperCase()}
+
+
+task count << {
+    4.times {
+        print "$it "
+    }
+}
+
+task groovyJDKMethod << {
+    String myName = "Kingsely";
+    myName.each() {
+        println "${it}"
+    };
+}
+
+task taskX(dependsOn: 'taskY') << {
+    println 'taskX'
+}
+task taskY << {
+    println 'taskY'
+}
+//依赖方式二
+helloworld.dependsOn me
+
+//依赖方式三
+me.dependsOn {
+    tasks.findAll {
+        task -> task.name.startsWith('lib')
+    }
+}
+
+task lib1 << {
+    println 'lib1'
+}
+task lib2 << {
+    println 'lib2'
+}
+// 向任务(所有)添加描述  description关键字
+task copy(type: Copy) {
+    description 'Copies the resource directory to the target directory.'
+    from 'resources'
+    into 'target'
+    include('**/*.txt', '**/*.xml', '**/*.properties')
+    println("description applied")
+}
+
+
+task compile <<{
+    println"We are doing the compile."
+}
+
+//异常处理  跳过此操作的进一步执行以及此任务的任何后续操作的执行
+compile.doFirst{
+    if(true){ throw new StopExecutionException() }
+}
+
+task myTask(dependsOn:'compile')<<{
+    println 'I am not affected'
+}
+
+task showTasks{
+    println tasks.class
+    println tasks.size()
+}
+
+task amize << {
+    println description;
+}
+
+amize{
+    description  = "I'm bedboy!"
+}
+
+
+
+tasks.create(name : "hello"){
+    println "This 's a task!"
+}

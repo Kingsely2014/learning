@@ -12,6 +12,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="springframework" target="1.7" />
       <module name="test" target="1.7" />
       <module name="theard" target="8" />
     </bytecodeTargetLevel>
