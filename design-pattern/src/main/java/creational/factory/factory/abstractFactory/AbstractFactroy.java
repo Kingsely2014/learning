@@ -1,6 +1,6 @@
 package creational.factory.factory.abstractFactory;
 
-import creational.factory.service.Milk;
+import creational.factory.service.Hero;
 
 /**
  * 抽象工厂模式
@@ -14,23 +14,23 @@ public abstract class AbstractFactroy {
     // 方便统一的管理
 
     /**
-     * 获得一个蒙牛品牌的牛奶
+     * 召唤英雄提莫
      *
      * @return
      */
-    public abstract Milk getTelunsu();
+    public abstract Hero getTeemo();
 
     /**
-     * 获得一个伊利品牌的牛奶
+     * 召唤英雄盖伦
      *
      * @return
      */
-    public abstract Milk getYili();
+    public abstract Hero getGaren();
 
     /**
-     * 获得一个特仑苏品牌的牛奶
+     * 召唤英雄莫甘娜
      *
      * @return
      */
-    public abstract Milk getMengniu();
+    public abstract Hero getMorgana();
 }

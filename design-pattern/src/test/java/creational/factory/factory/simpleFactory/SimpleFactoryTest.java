@@ -9,8 +9,8 @@ import org.junit.Test;
 public class SimpleFactoryTest {
 
     @Test
-    public void getMilk() {
+    public void getHero() {
         SimpleFactory factory = new SimpleFactory();
-        System.out.println(factory.getMilk("特仑苏"));
+        System.out.println(factory.getHero("提莫"));
     }
 }

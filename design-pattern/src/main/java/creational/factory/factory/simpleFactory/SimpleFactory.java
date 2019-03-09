@@ -1,9 +1,9 @@
 package creational.factory.factory.simpleFactory;
 
-import creational.factory.service.impl.Mengniu;
-import creational.factory.service.Milk;
-import creational.factory.service.impl.Telunsu;
-import creational.factory.service.impl.Yili;
+import creational.factory.service.impl.Morgana;
+import creational.factory.service.Hero;
+import creational.factory.service.impl.Teemo;
+import creational.factory.service.impl.Garen;
 
 /**
  * 简单工厂模型
@@ -13,15 +13,15 @@ import creational.factory.service.impl.Yili;
  **/
 public class SimpleFactory {
 
-    public Milk getMilk(String name) {
-        if ("特仑苏".equals(name)) {
-            return new Telunsu();
-        } else if ("伊利".equals(name)) {
-            return new Yili();
-        } else if ("蒙牛".equals(name)) {
-            return new Mengniu();
+    public Hero getHero(String name) {
+        if ("提莫".equals(name)) {
+            return new Teemo();
+        } else if ("盖伦".equals(name)) {
+            return new Garen();
+        } else if ("莫甘娜".equals(name)) {
+            return new Morgana();
         } else {
-            System.out.println("没有您需要的产品！");
+            System.out.println("英雄优惠季，现在充值点卷购买英雄买一送一哦！");
             return null;
         }
     }

@@ -1,5 +1,6 @@
 package creational.factory.factory.factory;
 
+import creational.factory.service.impl.Morgana;
 import org.junit.Test;
 
 /**
@@ -9,8 +10,8 @@ import org.junit.Test;
 public class FactoryTest {
 
     @Test
-    public void getMilk() {
-        Factory factory = new YiliFactory();
-        System.out.println(factory.getMilk());
+    public void getHero() {
+//        Factory factory = new Morgana();
+//        System.out.println(factory.getHero());
     }
 }

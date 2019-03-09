@@ -10,7 +10,7 @@ public class AbstactFactoryTest {
 
     @Test
     public void getMilk() {
-        MilkFactory factory = new MilkFactory();
-        System.out.println(factory.getYili());
+        HeroFactory factory = new HeroFactory();
+        System.out.println(factory.getTeemo());
     }
 }

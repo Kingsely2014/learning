@@ -4,10 +4,10 @@ package creational.factory.service;
  * @author Kingsely
  * @create 2018-07-30
  **/
-public interface Milk {
+public interface Hero {
 
     /**
-     * 根据名称获取对应生产的品牌牛奶
+     * 根据名称选择对应英雄
      *
      * @param name
      * @return

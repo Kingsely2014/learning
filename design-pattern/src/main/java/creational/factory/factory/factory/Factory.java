@@ -1,6 +1,6 @@
 package creational.factory.factory.factory;
 
-import creational.factory.service.Milk;
+import creational.factory.service.Hero;
 
 /**
  * 标准工厂模型
@@ -12,5 +12,5 @@ public interface Factory {
     /**
      * @return
      */
-    Milk getMilk();
+    Hero getHero();
 }
